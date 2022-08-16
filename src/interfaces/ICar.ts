@@ -6,4 +6,6 @@ const carZodSchema = vehicleZodSchema.extend({
   seatsQty: z.number().gte(2).lte(7),
 });
 
-export type ICar = z.infer<typeof carZodSchema>;
+type ICar = z.infer<typeof carZodSchema>;
+
+export { ICar, carZodSchema };
