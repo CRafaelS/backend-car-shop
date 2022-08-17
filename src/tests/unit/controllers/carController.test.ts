@@ -18,7 +18,8 @@ describe('Car Controller', () => {
   before(() => {
     sinon.stub(carService, 'create').resolves(carWithId);
     sinon.stub(carService, 'read').resolves(allcar);
-    sinon.stub(carService, 'readOne').resolves(carWithId)
+    sinon.stub(carService, 'readOne').resolves(carWithId);
+    sinon.stub(carModel, 'update').resolves(carWithId);
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns(res);
