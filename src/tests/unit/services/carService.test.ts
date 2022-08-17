@@ -3,7 +3,7 @@ import * as sinon from 'sinon';
 import { ZodError } from 'zod';
 import CarModel from '../../../models/CarModel';
 import CarService from '../../../services/CarService';
-import { carMock, carWithId } from '../../mocks/carMock';
+import { carMock, carWithId, allcar } from '../../mocks/carMock';
 
 describe('car Service', () => {
 	const carModel = new CarModel();
@@ -11,6 +11,8 @@ describe('car Service', () => {
  
 	before(() => {
 		sinon.stub(carModel, 'create').resolves(carWithId);
+		sinon.stub(carModel, 'read').resolves(allcar);
+		sinon.stub(carModel, 'readOne').resolves(carWithId);
 	})
 	after(() => {
 		sinon.restore()
