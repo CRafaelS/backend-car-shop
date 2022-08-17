@@ -2,9 +2,9 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import CarModel from '../../../models/CarModel';
 import { Model } from 'mongoose';
-import { car, carWithId } from '../../mocks/carMock';
+import { carMock, carWithId } from '../../mocks/carMock';
 
-describe('Frame Model', () => {
+describe('Car Model', () => {
 	const carModel = new CarModel();
 
 	before(() => {
@@ -15,10 +15,10 @@ describe('Frame Model', () => {
 		sinon.restore();
 	})
 
-	describe('creating a frame', () => {
+	describe('creating a Car', () => {
 		it('successfully created', async () => {
-			const newFrame = await carModel.create(car);
-			expect(newFrame).to.be.deep.equal(carWithId);
+			const newCar = await carModel.create(carMock);
+			expect(newCar).to.be.deep.equal(carWithId);
 		});
 	});
 });

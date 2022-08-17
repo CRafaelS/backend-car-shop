@@ -1,6 +1,6 @@
 import { ICar } from '../../interfaces/ICar';
 
-const car: ICar = {
+const carMock: ICar = {
 	model: 'Gol',
   year: 2020,
   color: 'prata',
@@ -22,6 +22,6 @@ const carWithId: ICar & { _id: string } = {
 };
 
 export {
-	car,
+	carMock,
 	carWithId,
 };
